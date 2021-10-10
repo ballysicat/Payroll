@@ -1,0 +1,30 @@
+Balance = 2000
+
+print('############################# Virtual ATM #############################')
+print('\nPress [1] To  check your Balance')
+print('Press [2] To  Depodite')
+print('Press [3] To  Withdraw')
+
+temp = int(input('Enter Code: '))
+while(True):
+    if(temp < 1 or temp > 3):
+        print('Invalid Input !!!')
+        temp = int(input('Enter Code: '))
+    else:
+        break
+if(temp == 1):
+    print('Your Balance is: ',Balance)
+elif(temp == 2):
+    dep = int(input('Enter deposite amount: '))
+    Balance += dep
+    print('Your Balance now is: ',Balance)
+else:
+    wthrw = int(input('Enter withdraw amount: '))
+    while(wthrw > Balance):
+            print('Insuficient Balance: ')
+            wthrw = int(input('Enter withdraw amount: '))
+        
+    Balance -= wthrw
+    print('Your transaction successfully')
+    print('You Withdraw: ', wthrw)
+    print('Your Balance now is: ',Balance)
